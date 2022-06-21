@@ -1,3 +1,3 @@
 <?php
 
-define('URL_ROOT','/personal_booklog');
+define('URL_ROOT','https://personal-booklog.com');

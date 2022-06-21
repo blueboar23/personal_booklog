@@ -2,8 +2,6 @@
 session_start();
 require_once(dirname(__FILE__) . '/inc/header.php');
 ?>
-<?php ini_set("display_errors", 0)
-?>
 
 <div class="container-fluid">
 
@@ -209,10 +207,10 @@ require_once(dirname(__FILE__) . '/inc/header.php');
                 <?php echo '<strong>' . $total_books . '</strong>' .  ' 件中 ' . '<strong>' . $initial_number . '</strong>' . '  -  ' . '<strong>' . $final_number . '</strong>' . ' 件目を表示'; ?>
             </div>
         </div>
-        <?php elseif ($total_books === 0) : ?>
-            <div class="row text-center">
-                <div class="col-lg-12">
-                    <?php echo '<strong>' . $total_books . '</strong>' .  ' 件中 ' . '<strong>0</strong>' . '  -  ' . '<strong>' . $final_number . '</strong>' . ' 件目を表示'; ?>
+    <?php elseif ($total_books === 0) : ?>
+        <div class="row text-center">
+            <div class="col-lg-12">
+                <?php echo '<strong>' . $total_books . '</strong>' .  ' 件中 ' . '<strong>0</strong>' . '  -  ' . '<strong>' . $final_number . '</strong>' . ' 件目を表示'; ?>
             </div>
         </div>
     <?php else : ?>
@@ -221,9 +219,12 @@ require_once(dirname(__FILE__) . '/inc/header.php');
                 <?php echo '<strong>' . $total_books . '</strong>' .  ' 件中 ' . '<strong>' . $initial_number . '</strong>' . '  -  ' . '<strong>' . $final_number . '</strong>' . ' 件目を表示'; ?>
             </div>
         </div>
-        <?php endif ?>
+    <?php endif ?>
 <?php else : ?>
-    <?php header('Location: login_form.php'); ?>
+    <script>
+        location.href = '/login_form.php'
+    </script>
+    <?php exit; ?>
 <?php endif ?>
 <br><br><br>
     </div>

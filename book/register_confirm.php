@@ -21,7 +21,8 @@ if (!$author = filter_input(INPUT_POST, 'author')) {
 
 if (count($err) > 0) {
     $_SESSION['err'] = $err;
-    header('Location: register_form.php');
+    echo "<script>location.href='/book/register_form.php'</script>";
+    exit;
 }
 
 ?>

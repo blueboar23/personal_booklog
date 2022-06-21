@@ -9,7 +9,8 @@ if (empty($_GET['id'])) {
     $err_msg = [];
     $err_msg['failure'] = '削除ボタンからアクセスしてください';
     $_SESSION['err_msg'] = $err_msg;
-    header('Location: ../index.php');
+    echo "<script>location.href='/index.php'</script>";
+    exit;
 }
 
 $id = $_GET['id'];
@@ -20,7 +21,8 @@ if (!$result) {
     $err_msg = [];
     $err_msg['failure'] = 'そのデータは登録されていません';
     $_SESSION['err_msg'] = $err_msg;
-    header('Location: ../index.php');
+    echo "<script>location.href='/index.php'</script>";
+    exit;
 }
 ?>
 

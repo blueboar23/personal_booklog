@@ -9,7 +9,8 @@ if (!isset($_SESSION['csrf_token']) || $token !== $_SESSION['csrf_token']) {
     $err_msg = [];
     $err_msg['failure'] = '削除ボタンからアクセスしてください';
     $_SESSION['err_msg'] = $err_msg;
-    header('Location: ../index.php');
+    echo "<script>location.href='/index.php'</script>";
+    exit;
 }
 $id = $_POST['updated_id'];
 unset($_SESSION['csrf_token']);

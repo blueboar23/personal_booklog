@@ -35,7 +35,7 @@
                             //フォームの入力をチェック
                             if (isset($_POST['submit'])) {
                                 if (empty($_POST['genre'])) {
-                                    echo '<p class="alert alert-danger">' . 'ジャンルが入力されていません。' . '</p>';
+                                    echo '<p class="alert alert-danger">' . 'ジャンルが入力されていません' . '</p>';
                                 } elseif (isset($_POST['genre'])) {
                                     $genre = $_POST['genre'];
                                     $dbh = DbLogic::dbConnect();
@@ -46,7 +46,7 @@
                                     if ($check->fetchColumn() != 0) {
                                         echo '<p class="alert alert-danger">' . '「' . escape($genre) . '」は既に登録されています' . '</p>';
                                     } elseif ($row_numbers > 29) {
-                                        echo '<p class="alert alert-danger">' . 'ジャンルは30個までしか登録できません。' . '</p>';
+                                        echo '<p class="alert alert-danger">' . 'ジャンルは30個までしか登録できません' . '</p>';
                                     } else {
                                         $statement = $dbh->prepare("INSERT INTO genres(genre,user_id) VALUE (:genre,:user_id)");
                                         $statement->bindValue(':genre', $genre, PDO::PARAM_STR);

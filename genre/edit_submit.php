@@ -6,9 +6,10 @@
     <?php
     if (empty($_POST['submit'])) {
         $genre_err_msg = [];
-        $genre_err_msg['failure'] = '編集ボタンからアクセスしてください。</br>';
+        $genre_err_msg['failure'] = '編集ボタンからアクセスしてください</br>';
         $_SESSION['genre_err_msg'] = $genre_err_msg;
-        header('Location: register.php');
+        echo "<script>location.href='/genre/register.php'</script>";
+        exit;
     }
     $user_id = $_SESSION['login_user']['id'];
     $genre = $_POST['genre'];
@@ -20,22 +21,25 @@
         if (empty($_POST['genre'])) {
             $err['message'] = '変更するジャンルの値を入力してください';
             $_SESSION['err'] = $err;
-            header('Location: register.php');
+            echo "<script>location.href='/genre/register.php'</script>";
+            exit;
         } elseif (isset($_POST['genre'])) {
             $dbh = DbLogic::dbConnect();
             $check = $dbh->query("SELECT * FROM genres WHERE user_id = $user_id AND genre ='" .  $genre . "'");
             if ($check->fetchColumn() != 0) {
-                $err['message'] = '「' . escape($genre) . '」' . 'は既に登録されています。';
+                $err['message'] = '「' . escape($genre) . '」' . 'は既に登録されています';
                 $_SESSION['err'] = $err;
-                header( 'Location: register.php');
+                echo "<script>location.href='/genre/register.php'</script>";
+                exit;
             } else {
                 $statement = $dbh->prepare("UPDATE genres SET genre = :genre where id = :id");
                 $statement->bindValue(':genre', $genre, PDO::PARAM_STR);
                 $statement->bindValue(':id', $id, PDO::PARAM_INT);
                 $statement->execute();
-                $success['message'] = '「' . escape($genre) . '」' . 'に更新されました。';
+                $success['message'] = '「' . escape($genre) . '」' . 'に更新されました';
                 $_SESSION['success'] = $success;
-                header( 'Location: register.php');
+                echo "<script>location.href='/genre/register.php'</script>";
+                exit;
 
             }
         }

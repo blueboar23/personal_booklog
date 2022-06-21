@@ -4,5 +4,6 @@ $err = [];
 if (!UserLogic::checkLogin()) {
     $err['msg'] = 'ログインせずに直接アクセスできません';
     $_SESSION = $err;
-    header('Location: ../login_form.php');
+    echo "<script>location.href='/login_form.php'</script>";
+    exit;
 }

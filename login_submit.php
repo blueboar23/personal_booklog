@@ -16,19 +16,20 @@ if(!$password = filter_input(INPUT_POST, 'password')) {
 
 if (count($err) > 0) {
     $_SESSION = $err;
-    header('Location: login_form.php');
-    return;
+    echo "<script>location.href='/login_form.php'</script>";
+    exit;
 }
 
 //ログイン成功時の処理
 $result = UserLogic::login($email,$password);
 
 if(!$result){
-    header('Location: login_form.php');
-    return;
+    echo "<script>location.href='/login_form.php'</script>";
+    exit;
 }
 
-header('Location: index.php');
+echo "<script>location.href='/index.php'</script>";
+exit;
 
 
 

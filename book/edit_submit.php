@@ -11,7 +11,8 @@ if (!isset($_POST['submit'])) {
     $err_msg = [];
     $err_msg['failure'] = '編集ボタンからアクセスしてください';
     $_SESSION['err_msg'] = $err_msg;
-    header('Location: ../index.php');
+    echo "<script>location.href='/index.php'</script>";
+    exit;
 }
 
 $err = [];
@@ -31,7 +32,8 @@ $id= $_POST['updated_id'];
 
 if (count($err) > 0) {
     $_SESSION['err'] = $err;
-    header("Location: edit.php?id=$id");
+    echo "<script>location.href='/index.php?id=$id'</script>";
+    exit;
 }
 
 ?>

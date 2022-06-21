@@ -43,21 +43,21 @@ $isCreated = false;
 
 if (count($err) > 0) {
     $_SESSION = $err;
-    header('Location: signup_form.php');
-    return;
+    echo "<script>location.href='/signup_form.php'</script>";
+    exit;
 }
 if (count($err) === 0) {
     $isCreated = UserLogic::createUser($_POST);
     if($isCreated){
         $_SESSION = [];
         $_SESSION['success'] = '登録成功です。さあ、ログインして始めよう';
-        header('Location: login_form.php');
-        return;
+        echo "<script>location.href='/login_form.php'</script>";
+        exit;
     } else {
     $err['failure'] = 'そのメールアドレスは既に登録されています';
     $_SESSION = $err;
-    header('Location: signup_form.php');
-    return;
+    echo "<script>location.href='/signup_form.php'</script>";
+    exit;
     }
 }
 

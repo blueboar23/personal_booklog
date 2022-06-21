@@ -20,7 +20,8 @@
         $statement->execute();
         $err['message'] = '「' . escape($genre) . '」' . 'が削除されました。';
         $_SESSION['err'] = $err;
-        header('Location: register.php');
+        echo "<script>location.href='/genre/register.php'</script>";
+        exit;
     }
 
     ?>

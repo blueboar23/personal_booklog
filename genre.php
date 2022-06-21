@@ -299,7 +299,7 @@ $third_3rd_place_number = array_shift($third_rank_array);
         </div>
     </div>
 <?php else : ?>
-    <?php echo '<h2 class="text-center">' .  "各ランクを含んだ読書ログを1つずつ登録すれば、ランク別のジャンルの割合が出現します。" . '</h2>' ?>
+    <?php echo '<h2 class="text-center">' .  "各ランクを含んだ読書ログを1つずつ登録すれば、ランク別のジャンルの割合が出現します" . '</h2>' ?>
     <div class="container text-center">
         <div class="row">
             <div class="col-lg-12 mx-auto mb-5">

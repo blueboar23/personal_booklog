@@ -80,7 +80,7 @@ class BookLogic
             echo $e->getMessage();
         }
         $_SESSION['update_msg'] = $update_msg;
-        header('Location: ../index.php');
+        echo "<script>location.href='/index.php'</script>";
         return $result;
     }
 
@@ -121,7 +121,7 @@ class BookLogic
             $e->getMessage();
         }
         $_SESSION['delete_msg'] = $delete_msg;
-        header('Location: ../index.php');
+        echo "<script>location.href='/index.php'</script>";
         return $result;
     }
 

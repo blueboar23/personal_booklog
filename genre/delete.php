@@ -6,9 +6,10 @@
 <?php
 if (empty($_GET['id'])) {
     $genre_err_msg = [];
-    $genre_err_msg['failure'] = '削除ボタンからアクセスしてください。</br>';
+    $genre_err_msg['failure'] = '削除ボタンからアクセスしてください</br>';
     $_SESSION['genre_err_msg'] = $genre_err_msg;
-    header('Location: register.php');
+    echo "<script>location.href='/genre/register.php'</script>";
+    exit;
 }
 
 // DBのデータを表示
@@ -25,9 +26,10 @@ $genre = $statement->fetch(PDO::FETCH_ASSOC);
 
 if (!$genre) {
     $genre_err_msg = [];
-    $genre_err_msg['failure'] = 'そのデータは登録されていません。</br>';
+    $genre_err_msg['failure'] = 'そのデータは登録されていません</br>';
     $_SESSION['genre_err_msg'] = $genre_err_msg;
-    header('Location: register.php');
+    echo "<script>location.href='/genre/register.php'</script>";
+    exit;;
 }
 ?>
 

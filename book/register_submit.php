@@ -13,7 +13,7 @@ $token = filter_input(INPUT_POST, 'csrf_token');
 if (!isset($_SESSION['csrf_token']) || $token !== $_SESSION['csrf_token']) {
 $err['err'] = '送信フォームから送信してください';
 $_SESSION['err'] = $err;
-header('Location: register_form.php');
+echo "<script>location.href='/book/register_form.php'</script>";
 }
 unset($_SESSION['csrf_token']);
 
@@ -21,7 +21,8 @@ unset($_SESSION['csrf_token']);
 if(count($err) == 0 ){
     if (BookLogic::registerBooks($user_id,$content)) {
         $_SESSION['content'] = [];
-        header('Location: ../index.php');
+        echo "<script>location.href='/index.php'</script>";
+        exit;
     }
 }
 

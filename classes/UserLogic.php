@@ -78,7 +78,6 @@ class UserLogic
 
         if(password_verify($password,$user['password'])) {
             session_regenerate_id(true);
-            //sessionには配列を入れられる。
             $_SESSION['login_user'] = $user;
             $result = true;
             return $result;
@@ -134,7 +133,8 @@ class UserLogic
     public static function logout() {
         $_SESSION = [];
         session_destroy();
-        header('Location: index.php');
+        echo "<script>location.href='/index.php'</script>";
+        exit;
     }
 
 }
