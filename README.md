@@ -45,6 +45,9 @@ function printHello() {
 |   | jQuery
 |   |Chart.js
 
+## ER図
+![ER diagram](https://user-images.githubusercontent.com/89965484/175561246-47b2fc0f-d046-4816-8d33-f7350bd2aa41.png)
+
 ### 使用技術
 ___
 **バックエンド**
