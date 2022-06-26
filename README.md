@@ -44,26 +44,7 @@ _____
 [プロフィールページ(Github Pages)](https://blueboar23.github.io/resume/)
 
 ![Markdown Logo](https://markdown-here.com/img/icon256.png)
-
-`<p>This is a paragraph </p>`
-
-```php
-echo "hello world";
-
-function printHello() {
-    echo "Hello";
-}
-```
-
-**技術スタック**
-|サーバーサイド|フロントエンド|
-|-------|-------|
-|PHP 7.4  |HTML
-|MySQL 5.7  |CSS
-|Apache   |Bootstrap 4.0
-|ajax  | Javascript
-|   | jQuery
-|   |Chart.js
+    
 
 ## ER図
 ![ER diagram](https://user-images.githubusercontent.com/89965484/175561246-47b2fc0f-d046-4816-8d33-f7350bd2aa41.png)
@@ -83,7 +64,7 @@ ___
 * MySQL 5.7.34
 
 **インフラ**
-* Heroku
+*　ロリポップ（レンタルサーバー）
 
 **バージョン管理**
 * Git
