@@ -78,7 +78,6 @@ HTMLのheaderを読み込むファイルに、関数やメソッドを定義し�
 ロジック系の処理（ログインチェック）の前にHTMLのheadを読み込んでいたため、本番環境でheader関数が使えず、Javascriptのlocationオブジェクトで代用する形になってしまった。  
 
 
-
 ## アプリの写真
 ###  ユーザー登録画面
 ![register-form](https://user-images.githubusercontent.com/89965484/175775610-07f28056-681a-43dc-99f1-a583ee1d3311.png)
