@@ -10,7 +10,7 @@ require_once(dirname(__FILE__) . '/inc/header.php');
         $login_user = $_SESSION['login_user'];
     }
     if (UserLogic::checkLogin()) {
-        echo "<p class=" . "alert-success" . ">" . "<strong>{$login_user['name']}</strong>さんがログインしています" . "</p>";
+        echo "<p class=alert-success><strong>" . escape($login_user['name']) . "</strong>さんがログインしています</p>";
     }
 
 
