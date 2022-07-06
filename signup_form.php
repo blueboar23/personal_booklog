@@ -15,12 +15,11 @@ $_SESSION = [];
                     <h2 class="text-center">ユーザー登録フォーム</h2>
                 </div>
                 <div class="card-body">
-
                     <form action="signup_submit.php" method="post">
-
                         <?php if (isset($err['failure'])) : ?>
                             <p class="alert-danger"><?php echo escape($err['failure']) ?></p>
-                    <?php endif ?>
+                        <?php endif ?>
+
                     <div class="form-group">
                         <p>
                             <label for="name">名前：</label><br>
@@ -28,8 +27,8 @@ $_SESSION = [];
                         </p>
                         <?php if (isset($err['name'])) : ?>
                             <p class="alert-danger"><?php echo escape($err['name']) ?></p>
-                            <?php endif ?>
-                        </div>
+                        <?php endif ?>
+                    </div>
 
                         <div class="form-group">
                             <p>
@@ -38,16 +37,16 @@ $_SESSION = [];
                             </p>
                             <?php if (isset($err['email_signup'])) : ?>
                                 <p class="alert-danger"><?php echo escape($err['email_signup']) ?></p>
-                                <?php endif ?>
-                            </div>
+                            <?php endif ?>
+                        </div>
 
-                    <div class="form-group">
-                        <p>
-                            <label for="password">パスワード (英数字8文字以上16文字以下)：</label><br>
-                            <input type="password" name="password" class="form-control form-control-lg">
-                        </p>
-                        <?php if (isset($err['password_signup'])) : ?>
-                            <p class="alert-danger"><?php echo escape($err['password_signup']) ?></p>
+                        <div class="form-group">
+                            <p>
+                                <label for="password">パスワード (英数字8文字以上16文字以下)：</label><br>
+                                <input type="password" name="password" class="form-control form-control-lg">
+                            </p>
+                            <?php if (isset($err['password_signup'])) : ?>
+                                <p class="alert-danger"><?php echo escape($err['password_signup']) ?></p>
                             <?php endif ?>
                         </div>
 
@@ -58,22 +57,22 @@ $_SESSION = [];
                             </p>
                             <?php if (isset($err['confirm_password'])) : ?>
                                 <p class="alert-danger"><?php echo escape($err['confirm_password']) ?></p>
-                                <?php endif ?>
-                            </div><br>
+                            <?php endif ?>
+                        </div><br>
 
-                            <input type="hidden" name="csrf_token" value="<?php echo escape(setToken()); ?>">
+                        <input type="hidden" name="csrf_token" value="<?php echo escape(setToken()); ?>">
 
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col">
-                                        <input type="submit" value="新規登録する" class="btn btn-success btn-block">
-                                    </div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col">
+                                    <input type="submit" value="新規登録する" class="btn btn-success btn-block">
                                 </div>
-                            </div><br><br>
-
-                            <div class="text-center">
-                                <a href="<?php echo URL_ROOT ?>/login_form.php">登録済みの方はこちらからログイン</a>
                             </div>
+                        </div><br><br>
+
+                        <div class="text-center">
+                            <a href="<?php echo URL_ROOT ?>/login_form.php">登録済みの方はこちらからログイン</a>
+                        </div>
 
 
 

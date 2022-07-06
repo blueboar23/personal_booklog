@@ -14,6 +14,7 @@ if (!isset($_SESSION['csrf_token']) || $token !== $_SESSION['csrf_token']) {
 $err['err'] = '送信フォームから送信してください';
 $_SESSION['err'] = $err;
 echo "<script>location.href='/book/register_form.php'</script>";
+exit;
 }
 unset($_SESSION['csrf_token']);
 

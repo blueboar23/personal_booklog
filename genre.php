@@ -22,7 +22,7 @@ $legend_num = $statement->fetchColumn();
 // 殿堂入り
 
 // 1軍
-$sql = "SELECT count(genre_id) as legend_num from books where user_id = :user_id and rank = '1軍'";
+$sql = "SELECT count(genre_id) as first_num from books where user_id = :user_id and rank = '1軍'";
 $statement = $dbh->prepare($sql);
 $statement->bindValue('user_id', $user_id, PDO::PARAM_INT);
 $statement->execute();
@@ -30,7 +30,7 @@ $first_num = $statement->fetchColumn();
 // 1軍
 
 // 2軍
-$sql = "SELECT count(genre_id) as legend_num from books where user_id = :user_id and rank = '2軍'";
+$sql = "SELECT count(genre_id) as second_num from books where user_id = :user_id and rank = '2軍'";
 $statement = $dbh->prepare($sql);
 $statement->bindValue('user_id', $user_id, PDO::PARAM_INT);
 $statement->execute();
@@ -38,7 +38,7 @@ $second_num = $statement->fetchColumn();
 // 2軍
 
 // 3軍
-$sql = "SELECT count(genre_id) as legend_num from books where user_id = :user_id and rank = '3軍'";
+$sql = "SELECT count(genre_id) as third_num from books where user_id = :user_id and rank = '3軍'";
 $statement = $dbh->prepare($sql);
 $statement->bindValue('user_id', $user_id, PDO::PARAM_INT);
 $statement->execute();
@@ -299,7 +299,7 @@ $third_3rd_place_number = array_shift($third_rank_array);
         </div>
     </div>
 <?php else : ?>
-    <?php echo '<h2 class="text-center">' .  "各ランクを含んだ読書ログを1つずつ登録すれば、ランク別のジャンルの割合が出現します" . '</h2>' ?>
+    <h2 class="text-center">各ランクを含んだ読書ログを1つずつ登録すれば、ランク別のジャンルの割合が出現します</h2>
     <div class="container text-center">
         <div class="row">
             <div class="col-lg-12 mx-auto mb-5">

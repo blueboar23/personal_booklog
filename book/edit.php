@@ -61,11 +61,11 @@ if (!$book) {
                         <?php endif ?>
                         <label for="genre">ジャンル：</label>
                         <select class="form-control form-control-lg" name="genre" id="genre">
-                            <?php $results = GenreLogic::getAllGenres($user_id); ?>
-                            <?php if (!$results) : ?>
-                                <option value="<?php echo 'ジャンルを登録してください' ?>"><?php echo 'ジャンルを登録してください' ?>
-                                <?php else : ?>
-                                    <?php foreach ($results as $result) : ?>
+                        <?php $results = GenreLogic::getAllGenres($user_id); ?>
+                        <?php if (!$results) : ?>
+                            <option value="<?php echo 'ジャンルを登録してください' ?>"><?php echo 'ジャンルを登録してください' ?>
+                        <?php else : ?>
+                            <?php foreach ($results as $result) : ?>
                                 <option value="<?php echo $result['id'] ?>" <?php echo in_array($result['id'], $result, true) && $book['genre_id'] == $result['id'] ? 'selected' : ''; ?>><?php echo GenreLogic::getGenreName($result['id']) ?></option>
                             <?php endforeach ?>
                         <?php endif ?>

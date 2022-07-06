@@ -29,49 +29,49 @@ $flag = 0;
 
                             <?php if (isset($err['err'])) : ?>
                                 <p class="alert-danger"><?php echo escape($err['err']) ?>
+                            <?php endif ?>
+
+                            <div class="form_group">
+                                <h4>
+                                    <label for="title"><strong>タイトル：＊ </strong></label>
+                                    <input type="text" id="title" name="title" class="form-control form-control-lg" placeholder="本のタイトル名" value="<?php if (isset($content['title'])) {
+                                                                                                                                                        echo $content['title'];
+                                                                                                                                                    } ?>">
+                                </h4>
+                                <?php if (isset($err['title'])) : ?>
+                                    <p class="alert-danger"><?php echo escape($err['title']) ?>
                                 <?php endif ?>
+                            </div>
+                            <hr>
 
-                                <div class="form_group">
-                                    <h4>
-                                        <label for="title"><strong>タイトル：＊ </strong></label>
-                                        <input type="text" id="title" name="title" class="form-control form-control-lg" placeholder="本のタイトル名" value="<?php if (isset($content['title'])) {
-                                                                                                                                                            echo $content['title'];
-                                                                                                                                                        } ?>">
-                                    </h4>
-                                    <?php if (isset($err['title'])) : ?>
-                                        <p class="alert-danger"><?php echo escape($err['title']) ?>
-                                        <?php endif ?>
-                                </div>
-                                <hr>
+                            <div class="form-group">
+                                <h4>
+                                    <label for="author"><strong>著者：＊ </strong></label>
+                                    <input type="text" id="author" name="author" placeholder="本の著者名" class="form-control form-control-lg" value="<?php if (isset($content['author'])) {
+                                                                                                                                                        echo $content['author'];
+                                                                                                                                                    } ?>">
+                                </h4>
+                                <?php if (isset($err['author'])) : ?>
+                                    <p class="alert-danger"><?php echo escape($err['author']) ?>
+                                <?php endif ?>
+                            </div>
+                            <hr>
 
-                                <div class="form-group">
-                                    <h4>
-                                        <label for="author"><strong>著者：＊ </strong></label>
-                                        <input type="text" id="author" name="author" placeholder="本の著者名" class="form-control form-control-lg" value="<?php if (isset($content['author'])) {
-                                                                                                                                                            echo $content['author'];
-                                                                                                                                                        } ?>">
-                                    </h4>
-                                    <?php if (isset($err['author'])) : ?>
-                                        <p class="alert-danger"><?php echo escape($err['author']) ?>
-                                        <?php endif ?>
-                                </div>
-                                <hr>
-
-                                <div class="form-group">
-                                    <h4>
-                                        <label for="genre"><strong>ジャンル：＊ </strong></label>
-                                        <select name="genre" id="genre" class="form-control form-control-lg">
-                                            <?php $results = GenreLogic::getAllGenres($user_id); ?>
-                                            <?php if (!$results) : ?>
-                                                <option value="<?php echo 'ジャンルを登録してください' ?>"><?php echo 'ジャンルを登録してください' ?>
-                                                    <?php $flag = 1; ?>
-                                                <?php else : ?>
-                                                    <?php foreach ($results as $result) : ?>
+                            <div class="form-group">
+                                <h4>
+                                    <label for="genre"><strong>ジャンル：＊ </strong></label>
+                                    <select name="genre" id="genre" class="form-control form-control-lg">
+                                        <?php $results = GenreLogic::getAllGenres($user_id); ?>
+                                        <?php if (!$results) : ?>
+                                            <option value="<?php echo 'ジャンルを登録してください' ?>"><?php echo 'ジャンルを登録してください' ?>
+                                            <?php $flag = 1; ?>
+                                        <?php else : ?>
+                                            <?php foreach ($results as $result) : ?>
                                                 <option value="<?php echo $result['id'] ?>" <?php echo in_array($result['id'], $content, true) && $content['genre'] == $result['id'] ? 'selected' : ''; ?>><?php echo GenreLogic::getGenreName($result['id']) ?></option>
                                             <?php endforeach ?>
                                         <?php endif ?>
-                                        </select>
-                                    </h4>
+                                    </select>
+                                </h4>
 
                                     <?php if ($flag == 1) : ?>
                                         <p class="alert-danger"><?php echo '⚠️ジャンルを登録しないと、本を登録できません⚠️' ?></p>
@@ -99,7 +99,6 @@ $flag = 0;
                                     </div>
 
                                     <div>
-
                                         <label class="form-check-label btn btn-warning btn-lg mr-3" for="first">
                                             <input type="radio" name="rank" value="1軍" id="first" <?php if (isset($content['rank']) && $content['rank'] === "1軍") {
                                                                                                         echo "checked";
@@ -108,7 +107,6 @@ $flag = 0;
                                     </div>
 
                                     <div>
-
                                         <label class="form-check-label btn btn-warning btn-lg mr-3" for="legend">
                                             <input type="radio" name="rank" value="殿堂入り" id="legend" <?php if (isset($content['rank']) && $content['rank'] === "殿堂入り") {
                                                                                                             echo "checked";
@@ -128,7 +126,7 @@ $flag = 0;
                                     </h4>
                                     <?php if (isset($err['memo'])) : ?>
                                         <p class="alert-danger"><?php echo escape($err['memo']) ?>
-                                        <?php endif ?>
+                                    <?php endif ?>
                                 </div>
                                 <hr>
 
@@ -142,7 +140,7 @@ $flag = 0;
                                     </h4>
                                     <?php if (isset($err['lesson'])) : ?>
                                         <p class="alert-danger"><?php echo escape($err['lesson']) ?>
-                                        <?php endif ?>
+                                    <?php endif ?>
                                 </div>
                                 <hr>
 
