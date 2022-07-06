@@ -25,10 +25,18 @@ pass12345
 フレームワークを使う前にアプリ制作を通じて、生のPHPとSQLへの理解を深めたかったため。  
 
 ## 使用技術  
-HTML,CSS,Bootstrap4,PHP7.4.21,MySQL 5.7.34
+- HTML
+- CSS
+- Bootstrap 4
+- PHP 7.4.21
+- MySQL 5.7.34
 
 ## 使用ツール
-MAMP,Git,GitHub（Issue,Pull Request,Merge),SouceTree, draw.io
+- MAMP
+- Git
+- GitHub（Issue,Pull Request, Merge)
+- SourceTree
+- draw.io
 
 ## アプリの主な機能
 
@@ -75,7 +83,7 @@ ___
 絶対的な期限を設けずに開発してしまったため、開発が長引いてしまった。  
 作成前に詳細な設計をせず、「何をやらないか」が不明確だったため、実装するかどうか迷う機能が多々あった。　　
 HTMLのheaderを読み込むファイルに、関数やメソッドを定義したファイルをまとめてしまい、1つのファイルに複数の機能を持たせてしまった。  
-ロジック系の処理（ログインチェック）の前にHTMLのheadを読み込んでいたため、本番環境でheader関数が使えず、Javascriptのlocationオブジェクトで代用する形になってしまった。  
+ロジック系の処理（ログインチェックやバリデーション等）よりも前にHTMLのheadを読み込んでいたため、本番環境でheader関数が使えず、Javascriptのlocationオブジェクトで代用する形になってしまった。  
 
 
 ## アプリの写真
